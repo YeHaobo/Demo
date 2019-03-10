@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="friendList" type="minatest.example.com.minatest_android.entiti.Friend"/>
+        <variable name="imageType" type="minatest.example.com.minatest_android.tool.ImageLoding"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        android:background="@drawable/selector_item">
+        <com.meg7.widget.CustomShapeImageView
+            android:id="@+id/item_main_chat_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            app:shape = "circle"
+            app:friendAvatarURL="@{friendList.hread}"
+            app:imageType="@{imageType.typeNormal}"/>
+
+        <LinearLayout
+            android:id="@+id/item_main_chat_name_linear"
+            android:layout_toRightOf="@id/item_main_chat_img"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:textColor="@color/text_black"
+                android:gravity="center_vertical"
+                android:text="@{friendList.name}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="刚刚"
+                android:textSize="12dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/text_gray"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{friendList.phone}"
+            android:layout_marginLeft="10dp"
+            android:textSize="12dp"
+            android:layout_below="@id/item_main_chat_name_linear"
+            android:layout_toRightOf="@id/item_main_chat_img"
+            android:textColor="@color/text_gray"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/text_gray"/>
+    </RelativeLayout>
+</layout>

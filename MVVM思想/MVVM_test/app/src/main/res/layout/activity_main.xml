@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mainModel"
+            type="minatest.example.com.mvvm_test.viewModel.MainViewModel" />
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.MainActivity">
+
+        <TextView
+            android:paddingTop="20dp"
+            android:text="@{mainModel.siginSuccess}"
+            android:textColor="@color/colorAccent"
+            android:textSize="17dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:imageUrl="@{mainModel.url}"/>
+        <!--app:placeHolder="@{@drawable/holder}"-->
+        <!--app:error="@{@drawable/error}"-->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="点击确定、开启线程"
+            android:onClick="@{mainModel.siginOkClick}"/>
+
+        <!--这里使用隐式转换成String类型、若单个整形需要半死那个数据时需要转换成字符串类型-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{mainModel.userBean.age + mainModel.userBean.name}"/>
+    </LinearLayout>
+</layout>
