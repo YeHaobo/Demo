@@ -34,7 +34,7 @@ public class ChatService extends Service {
 				connector.getSessionConfig().setReadBufferSize(1024);
 				connector.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE,10);
 				connector.setHandler(new ChatHandle());//这里是异步操作 连接后立即返回
-                ConnectFuture future = connector.connect(new InetSocketAddress("192.168.1.102", 7080));
+                ConnectFuture future = connector.connect(new InetSocketAddress("192.168.0.107", 7080));
                 future.awaitUninterruptibly();// 等待连接创建完成
 				session = future.getSession();
 				session.getCloseFuture().awaitUninterruptibly();// 等待连接断开

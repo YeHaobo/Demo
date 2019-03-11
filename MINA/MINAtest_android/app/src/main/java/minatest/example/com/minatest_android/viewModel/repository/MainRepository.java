@@ -9,7 +9,7 @@ import minatest.example.com.minatest_android.entiti.Friend;
  *
  */
 public interface MainRepository extends BaseRepository{
-
+    //刷新好友列表信息
     void refreshFriend(List<Friend> friendList);
 }
 

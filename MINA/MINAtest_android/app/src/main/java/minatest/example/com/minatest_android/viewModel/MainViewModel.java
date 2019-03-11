@@ -1,6 +1,9 @@
 package minatest.example.com.minatest_android.viewModel;
 
 
+import android.text.Editable;
+import android.text.TextWatcher;
+
 import com.android.databinding.library.baseAdapters.BR;
 import java.util.HashMap;
 import java.util.List;
@@ -41,8 +44,31 @@ public class MainViewModel implements MainRepository{
         }else{
             Map<Integer,Integer> map = new HashMap<>();
             map.put(R.layout.item_main_chat,BR.friendList);
-            activity.binding.mainRecyclerView.setAdapter(new MainAdapter(friendList, map));
+            activity.binding.mainRecyclerView.setAdapter(new MainAdapter(friendList, map,activity));
         }
+    }
+
+    /**
+     * 获取好友的账号
+     */
+    public String friendName = "";
+    public TextWatcher getFriendName(){
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                friendName = s.toString().trim();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        };
     }
 
 }

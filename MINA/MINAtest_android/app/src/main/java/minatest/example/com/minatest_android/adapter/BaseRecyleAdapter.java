@@ -1,5 +1,6 @@
 package minatest.example.com.minatest_android.adapter;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
@@ -15,9 +16,11 @@ public class BaseRecyleAdapter extends RecyclerView.Adapter<BaseRecyleAdapter.Vi
     public List<?> data;
     private Map<Integer, Integer> hashMap;
     private OnRecycleitemOnClick onRecycleitemOnClick;
-    public BaseRecyleAdapter(List<?> data, Map<Integer, Integer> hashMap) {
+    public Activity activity;
+    public BaseRecyleAdapter(List<?> data, Map<Integer, Integer> hashMap,Activity activity) {
         this.data = data;
         this.hashMap = hashMap;
+        this.activity = activity;
     }
 
     @Override

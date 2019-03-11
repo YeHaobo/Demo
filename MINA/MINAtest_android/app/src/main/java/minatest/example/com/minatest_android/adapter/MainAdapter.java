@@ -1,15 +1,23 @@
 package minatest.example.com.minatest_android.adapter;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import minatest.example.com.minatest_android.R;
+import minatest.example.com.minatest_android.entiti.Friend;
+import minatest.example.com.minatest_android.entiti.User;
+import minatest.example.com.minatest_android.tool.IntentTo;
 import minatest.example.com.minatest_android.tool.MyToast;
+import minatest.example.com.minatest_android.view.ChatActivity;
 
 public class MainAdapter extends BaseRecyleAdapter {
-    public MainAdapter(List<?> data, Map<Integer, Integer> hashMap) {
-        super(data, hashMap);
+    public MainAdapter(List<?> data, Map<Integer, Integer> hashMap,Activity activity) {
+        super(data, hashMap,activity);
     }
 
     /**
@@ -23,7 +31,14 @@ public class MainAdapter extends BaseRecyleAdapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyToast.showImgToast(position+1+"",R.mipmap.ic_launcher_round);
+                Friend friend = (Friend) data.get(position);
+               Map<String,String> map = new HashMap<>();
+               map.put("uId",friend.getuId());
+               map.put("token",friend.getToken());
+               map.put("name",friend.getName());
+               map.put("phone",friend.getPhone());
+               map.put("hread",friend.getHread());
+               IntentTo.toActivity(activity,ChatActivity.class,map);
             }
         });
         /*int i = position + 1;
@@ -32,7 +47,6 @@ public class MainAdapter extends BaseRecyleAdapter {
     }
     /**
      * 编写规则,返回相应布局,比如这里是第四个item加载其他布局
-     *
      * @param position
      * @return
      */
@@ -43,4 +57,5 @@ public class MainAdapter extends BaseRecyleAdapter {
         else*/
         return R.layout.item_main_chat;
     }
+
 }
