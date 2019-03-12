@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="my_litepal_testz" />
+
+    <version value="1" />
+
+    <list>
+        <mapping class="data.mysql.com.greendaotest.entity.User"/>
+    </list>
+
+    <!--my_litepal_testz、版本是1、只有一张表是News、数据库存放的位置是guolin/database 打开手机存储就可以找到-->
+
+</litepal>
