@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="0dp"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/RadioButton_style"
+                android:drawableTop="@drawable/selector_radiobutton"
+                android:text="首页"
+                android:id="@+id/RadioButton_one" />
+
+            <RadioButton
+                android:drawableTop="@drawable/selector_radiobutton1"
+                style="@style/RadioButton_style"
+                android:text="分类"
+                android:id="@+id/RadioButton_two" />
+
+            <RadioButton
+                android:drawableTop="@drawable/selector_radiobutton3"
+                style="@style/RadioButton_style"
+                android:text="购物车"
+                android:id="@+id/RadioButton_four"/>
+
+            <RadioButton
+                android:drawableTop="@drawable/selector_radiobutton2"
+                style="@style/RadioButton_style"
+                android:text="我的"
+                android:id="@+id/RadioButton_three"/>
+        </RadioGroup>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
