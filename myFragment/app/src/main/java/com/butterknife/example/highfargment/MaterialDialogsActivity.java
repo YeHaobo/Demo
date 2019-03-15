@@ -1,5 +1,6 @@
 package com.butterknife.example.highfargment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,12 +15,15 @@ import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
 
-import org.w3c.dom.Text;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * dialog库
+ */
 public class MaterialDialogsActivity extends AppCompatActivity implements View.OnClickListener {
+
+
     @BindView(R.id.dialog_one)
     TextView dialogOne;
     @BindView(R.id.dialog_two)
@@ -28,6 +32,10 @@ public class MaterialDialogsActivity extends AppCompatActivity implements View.O
     TextView dialogThree;
     @BindView(R.id.dialog_four)
     TextView dialogFour;
+    @BindView(R.id.dialog_five)
+    TextView dialogFive;
+    @BindView(R.id.dialog_six)
+    TextView dialogSix;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,20 +46,38 @@ public class MaterialDialogsActivity extends AppCompatActivity implements View.O
         dialogTwo.setOnClickListener(this);
         dialogThree.setOnClickListener(this);
         dialogFour.setOnClickListener(this);
+        dialogFive.setOnClickListener(this);
+        dialogSix.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.dialog_one:dialog1();break;
-            case R.id.dialog_two:dialog2();break;
-            case R.id.dialog_three:dialog3();break;
-            case R.id.dialog_four:dialog4();break;
-            default:break;
+        switch (v.getId()) {
+            case R.id.dialog_one:
+                dialog1();
+                break;
+            case R.id.dialog_two:
+                dialog2();
+                break;
+            case R.id.dialog_three:
+                dialog3();
+                break;
+            case R.id.dialog_four:
+                dialog4();
+                break;
+            case R.id.dialog_five:
+                dialog5();
+                break;
+            case R.id.dialog_six:
+                startActivity(new Intent(MaterialDialogsActivity.this,SwipeLayoutActivity.class));
+                break;
+            default:
+                break;
         }
     }
+
     //普通对话框
-    private void dialog1(){
+    private void dialog1() {
         //采用链式编程颜色等参数都可修改包括选择器
         new MaterialDialog.Builder(this)
                 .theme(Theme.LIGHT)
@@ -78,7 +104,7 @@ public class MaterialDialogsActivity extends AppCompatActivity implements View.O
     }
 
     //CheckBox的对话框
-    private void dialog2(){
+    private void dialog2() {
         new MaterialDialog.Builder(this)
                 .titleColor(getResources().getColor(R.color.text_black))
                 .backgroundColor(getResources().getColor(R.color.white))
@@ -90,14 +116,14 @@ public class MaterialDialogsActivity extends AppCompatActivity implements View.O
                 .onAny(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(MaterialDialog dialog, DialogAction which) {
-                        Toast.makeText(MaterialDialogsActivity.this, dialog.isPromptCheckBoxChecked()+"", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MaterialDialogsActivity.this, dialog.isPromptCheckBoxChecked() + "", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .show();
     }
 
     //自定义对话框
-    private void dialog3(){
+    private void dialog3() {
         View contentView = LayoutInflater.from(this).inflate(R.layout.nav_header_main, null);
         final MaterialDialog dialog = new MaterialDialog.Builder(this)
                 .titleColor(getResources().getColor(R.color.text_black))
@@ -117,8 +143,8 @@ public class MaterialDialogsActivity extends AppCompatActivity implements View.O
         dialog.show();
     }
 
-    //进度普通条对话框
-    private void dialog4(){
+    //进度条普通对话框
+    private void dialog4() {
         new MaterialDialog.Builder(this)
                 .theme(Theme.LIGHT)
                 .title("Progress")
@@ -126,4 +152,17 @@ public class MaterialDialogsActivity extends AppCompatActivity implements View.O
                 .progress(true, 0)
                 .show();
     }
+
+    //确定的进度条对话框
+    private void dialog5() {
+        MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .theme(Theme.LIGHT)
+                .title("Progress")
+                .content("please wait...")
+                .contentGravity(GravityEnum.CENTER)
+                .progress(false, 100, true)
+                .show();
+        dialog.incrementProgress(50);//表示加上50
+    }
+
 }

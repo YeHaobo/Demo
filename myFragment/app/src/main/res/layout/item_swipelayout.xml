@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:id="@+id/item_swiper">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_red_light">
+        <ImageView
+            android:id="@+id/delect_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:src="@mipmap/delect"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/item_swiper_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="@color/text_black"/>
+    </LinearLayout>
+
+</com.daimajia.swipe.SwipeLayout>

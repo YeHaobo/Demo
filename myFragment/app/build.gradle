@@ -31,4 +31,8 @@ dependencies {
     //material-dialogs弹窗
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    //AndroidSwipeLayout滑动删除
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    //BaseRecyclerViewAdapterHelper万能适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
 }

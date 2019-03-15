@@ -50,6 +50,26 @@
                 android:gravity="center"
                 android:textSize="17dp"
                 android:text="进度条对话框"/>
+            <TextView
+                android:id="@+id/dialog_five"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:text="精准进度条对话框"/>
+            <TextView
+                android:id="@+id/dialog_six"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:text="去下一个Demo"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
