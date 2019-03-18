@@ -1,21 +1,18 @@
 package com.butterknife.example.highfargment.adapter;
 
-
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+
 import com.butterknife.example.highfargment.R;
 import com.butterknife.example.highfargment.entity.User;
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseItemDraggableAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-/**
- * 继承自万能适配器的使用
- */
-public class QuickAdapter extends BaseQuickAdapter<User, BaseViewHolder> {
+public class Quick2Adapter extends BaseItemDraggableAdapter<User, BaseViewHolder> {
 
-    public QuickAdapter(@LayoutRes int layoutResId, @Nullable List<User> data) {
+    public Quick2Adapter(@LayoutRes int layoutResId, @Nullable List<User> data) {
         super(layoutResId, data);
     }
 

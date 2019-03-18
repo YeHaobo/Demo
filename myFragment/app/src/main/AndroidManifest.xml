@@ -19,6 +19,8 @@
         <activity android:name=".MaterialDialogsActivity"/>
         <activity android:name=".SwipeLayoutActivity"/>
         <activity android:name=".BaseAdapterActivity"/>
+        <activity android:name=".BaseAdapter2Activity"/>
+        <activity android:name=".BaseAdapter3Activity"/>
     </application>
 
 </manifest>

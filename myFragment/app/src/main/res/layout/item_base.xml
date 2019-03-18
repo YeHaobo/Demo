@@ -14,6 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
+        android:text="长按或者点击我去拓展功能"
+        android:layout_marginTop="10dp"
         android:textColor="@color/text_black"
         android:textSize="15dp"
         />
