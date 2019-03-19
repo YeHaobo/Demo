@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cut_img"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingTop="20dp"
+        android:text="点我去裁剪图片"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        />
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView>
+
+</LinearLayout>
