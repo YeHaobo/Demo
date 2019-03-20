@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/my_tv"
+        android:transitionName="TextView"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:text="Frist"
+        android:background="@color/colorAccent"
+        android:paddingTop="20dp"/>
+    <LinearLayout
+        android:id="@+id/my_linear"
+        android:layout_centerInParent="true"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        android:transitionName="bg"
+        android:background="@android:color/holo_orange_light">
+        <ImageView
+            android:id="@+id/my_img"
+            android:scaleType="fitXY"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:transitionName="imageView"/>
+    </LinearLayout>
+
+</RelativeLayout>
