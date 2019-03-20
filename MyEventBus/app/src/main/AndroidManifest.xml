@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BusActivity"/>
+        <activity android:name=".Anim1Activity"/>
     </application>
 
 </manifest>
