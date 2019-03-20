@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/finish"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingTop="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        android:text="发送广播并且结束"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/show_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
