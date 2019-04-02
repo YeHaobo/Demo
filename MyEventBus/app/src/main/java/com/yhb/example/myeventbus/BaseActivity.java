@@ -34,4 +34,5 @@ public class BaseActivity extends AppCompatActivity {
     public MessageEvent.StringMessage getStringMsg(String res){
         return messageEvent.new StringMessage(res);
     }
+
 }

@@ -39,7 +39,7 @@ public class BusActivity extends BaseActivity {
                 break;
             case R.id.to_anim:
                 /**
-                 *  如果想使下一个Activity进入退出都有动画
+                 * 如果想使下一个Activity进入退出都有动画
                  * 通过如下设置
                  */
                 Intent intent = new Intent(BusActivity.this,Anim1Activity.class);

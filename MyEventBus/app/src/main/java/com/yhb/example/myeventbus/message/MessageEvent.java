@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
  * EventBus消息类
  */
 public class MessageEvent {
+
     /**
      * 字符串消息
      */
@@ -63,4 +64,5 @@ public class MessageEvent {
             this.drawable = drawable;
         }
     }
+
 }

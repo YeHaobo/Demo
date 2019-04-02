@@ -18,7 +18,6 @@ import minatest.example.com.minatest_android.utils.Density;
  */
 public class MyToast{
     private static Toast toast;//实现不管我们触发多少次Toast调用，都只会持续一次Toast显示的时长
-
     private static TextView mTextView;
     private static ImageView mImageView;
     /**
