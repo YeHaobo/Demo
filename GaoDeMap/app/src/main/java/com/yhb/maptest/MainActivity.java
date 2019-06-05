@@ -2,9 +2,9 @@ package com.yhb.maptest;
 
 
 import android.location.Location;
+import android.nfc.NfcManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnMyLocationChang
         mMapView.onCreate(savedInstanceState);
         aMap = mMapView.getMap();
         initMap();
+
     }
 
     /**
@@ -72,8 +73,8 @@ public class MainActivity extends AppCompatActivity implements OnMyLocationChang
 
         mGeocodeSearch = new GeocodeSearch(this);
         mGeocodeSearch.setOnGeocodeSearchListener(this);
-
     }
+
     /**
      * 定位的回调
      */
